@@ -1,6 +1,6 @@
 @GST_LIB_DEV_DEP@
 @GST_EXTRA_BUILD_DEPENDS@
-libgstreamer-plugins-base@GST_ABI@-dev (>= 1.5.0.1+git20150316)
+libgstreamer-plugins-base@GST_ABI@-dev (>= 1.5.0.1~0)
 autotools-dev
 dh-autoreconf
 automake (>= 1.11)
@@ -19,7 +19,7 @@ libmad0-dev (>= 0.15)
 libmpeg2-4-dev (>= 0.4.0)
 libsidplay1-dev
 libdvdread-dev (>= 0.9.0)
-gstreamer@GST_ABI@-plugins-base (>= 1.5.0.1+git20150316)
+gstreamer@GST_ABI@-plugins-base (>= 1.5.0.1~0)
 libcdio-dev (>= 0.76)
 libtwolame-dev (>= 0.3.10)
 libopencore-amrnb-dev

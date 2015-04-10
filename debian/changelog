@@ -1,3 +1,9 @@
+gst-plugins-ugly1.5 (1.5.0.1) experimental; urgency=medium
+
+  * Change package name to diferenciate between versions
+
+ -- Jose Antonio Santos Cadenas <santoscadenas@gmail.com>  Fri, 10 Apr 2015 13:54:01 +0200
+
 gst-plugins-ugly1.0 (1.5.0.1+git20150316-1) experimental; urgency=medium
 
   * New upstream GIT snapshot.

@@ -9,14 +9,14 @@ dpkg-dev (>= 1.15.1)
 @GST_EXTRA_BUILD_DEPENDS@
 @GST_LIB_DEV_DEP@
 gstreamer@GST_ABI@-doc
-gstreamer@GST_ABI@-plugins-base (>= 1.5.0.1+git20150316)
+gstreamer@GST_ABI@-plugins-base (>= 1.5.0.1~0)
 gstreamer@GST_ABI@-plugins-base-doc
 gtk-doc-tools (>= 1.12)
 liba52-0.7.4-dev
 libcdio-dev (>= 0.76)
 libdvdread-dev (>= 0.9.0)
 libglib2.0-dev (>= 2.32)
-libgstreamer-plugins-base@GST_ABI@-dev (>= 1.5.0.1+git20150316)
+libgstreamer-plugins-base@GST_ABI@-dev (>= 1.5.0.1~0)
 libmad0-dev (>= 0.15)
 libmp3lame-dev
 libmpeg2-4-dev (>= 0.4.0)

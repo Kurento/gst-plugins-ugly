@@ -1,4 +1,4 @@
-Source: gst-plugins-ugly1.0
+Source: gst-plugins-ugly1.5
 Section: libs
 Priority: optional
 Maintainer: Maintainers of GStreamer packages <pkg-gstreamer-maintainers@lists.alioth.debian.org>
@@ -12,16 +12,16 @@ Build-Depends: autoconf (>= 2.62),
                debhelper (>= 9),
                dh-autoreconf,
                dpkg-dev (>= 1.15.1),
-               libgstreamer1.0-dev (>= 1.5.0.1+git20150316),
-               gstreamer1.0-doc,
-               gstreamer1.0-plugins-base (>= 1.5.0.1+git20150316),
-               gstreamer1.0-plugins-base-doc,
+               libgstreamer1.5-dev (>= 1.5.0.1~0),
+               gstreamer1.5-doc,
+               gstreamer1.5-plugins-base (>= 1.5.0.1~0),
+               gstreamer1.5-plugins-base-doc,
                gtk-doc-tools (>= 1.12),
                liba52-0.7.4-dev,
                libcdio-dev (>= 0.76),
                libdvdread-dev (>= 0.9.0),
                libglib2.0-dev (>= 2.32),
-               libgstreamer-plugins-base1.0-dev (>= 1.5.0.1+git20150316),
+               libgstreamer-plugins-base1.5-dev (>= 1.5.0.1~0),
                libmad0-dev (>= 0.15),
                libmp3lame-dev,
                libmpeg2-4-dev (>= 0.4.0),
@@ -38,12 +38,12 @@ Vcs-Git: git://anonscm.debian.org/pkg-gstreamer/gst-plugins-ugly1.0.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-gstreamer/gst-plugins-ugly1.0.git;a=summary
 Homepage: http://gstreamer.freedesktop.org/modules/gst-plugins-ugly.html
 
-Package: gstreamer1.0-plugins-ugly-doc
+Package: gstreamer1.5-plugins-ugly-doc
 Architecture: all
 Section: doc
 Depends: ${misc:Depends},
-         gstreamer1.0-doc,
-         gstreamer1.0-plugins-base-doc
+         gstreamer1.5-doc,
+         gstreamer1.5-plugins-base-doc
 Description: GStreamer documentation for plugins from the "ugly" set
  GStreamer is a streaming media framework, based on graphs of filters
  which operate on media data.  Applications using this library can do
@@ -55,7 +55,7 @@ Description: GStreamer documentation for plugins from the "ugly" set
  This package contains documentation for plugins from the "ugly" set,
  a set of good-quality plug-ins that might pose distribution problems.
 
-Package: gstreamer1.0-plugins-ugly
+Package: gstreamer1.5-plugins-ugly
 Architecture: any
 Multi-Arch: same
 Depends: ${misc:Depends},
@@ -78,12 +78,12 @@ Description: GStreamer plugins from the "ugly" set
  This package contains plugins from the "ugly" set, a set of
  good-quality plug-ins that might pose distribution problems.
 
-Package: gstreamer1.0-plugins-ugly-dbg
+Package: gstreamer1.5-plugins-ugly-dbg
 Architecture: any
 Multi-Arch: same
 Section: debug
 Priority: extra
-Depends: gstreamer1.0-plugins-ugly (= ${binary:Version}),
+Depends: gstreamer1.5-plugins-ugly (= ${binary:Version}),
          ${misc:Depends}
 Description: GStreamer plugins from the "ugly" set (debug symbols)
  GStreamer is a streaming media framework, based on graphs of filters
