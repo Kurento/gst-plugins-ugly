@@ -811,7 +811,7 @@ gst_x264_enc_class_init (GstX264EncClass * klass)
           G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS));
   g_object_class_install_property (gobject_class, ARG_BITRATE,
       g_param_spec_uint ("bitrate", "Bitrate", "Bitrate in kbit/sec", 1,
-          100 * 1024, ARG_BITRATE_DEFAULT,
+          2000 * 1024, ARG_BITRATE_DEFAULT,
           G_PARAM_READWRITE | G_PARAM_STATIC_STRINGS |
           GST_PARAM_MUTABLE_PLAYING));
   g_object_class_install_property (gobject_class, ARG_VBV_BUF_CAPACITY,
@@ -2347,8 +2347,7 @@ gst_x264_enc_set_property (GObject * object, guint prop_id,
           encoder->sync_lookahead);
       break;
     case ARG_MULTIPASS_CACHE_FILE:
-      if (encoder->mp_cache_file)
-        g_free (encoder->mp_cache_file);
+      g_free (encoder->mp_cache_file);
       encoder->mp_cache_file = g_value_dup_string (value);
       g_string_append_printf (encoder->option_string, ":stats=%s",
           encoder->mp_cache_file);
