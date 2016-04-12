@@ -28,3 +28,4 @@ gstreamer@GST_ABI@-doc
 gstreamer@GST_ABI@-plugins-base-doc
 libx264-dev (>= 2:0.120)
 libmp3lame-dev
+libmpg123-dev (>= 1.13)
