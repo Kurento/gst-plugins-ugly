@@ -5,7 +5,7 @@ dnl please read gstreamer/docs/random/autotools before changing this file
 dnl initialize autoconf
 dnl releases only do -Wall, cvs and prerelease does -Werror too
 dnl use a three digit version number for releases, and four for cvs/prerelease
-AC_INIT([GStreamer Ugly Plug-ins],[1.7.1.1],[http://bugzilla.gnome.org/enter_bug.cgi?product=GStreamer],[gst-plugins-ugly])
+AC_INIT([GStreamer Ugly Plug-ins],[1.8.0],[http://bugzilla.gnome.org/enter_bug.cgi?product=GStreamer],[gst-plugins-ugly])
 
 AG_GST_INIT
 
@@ -42,11 +42,11 @@ AC_SUBST(GST_API_VERSION)
 AC_DEFINE_UNQUOTED(GST_API_VERSION, "$GST_API_VERSION",
   [GStreamer API Version])
 
-AS_LIBTOOL(GST, 701, 0, 701)
+AS_LIBTOOL(GST, 800, 0, 800)
 
 dnl *** required versions of GStreamer stuff ***
-GST_REQ=1.7.1.1
-GSTPB_REQ=1.7.1.1
+GST_REQ=1.8.0
+GSTPB_REQ=1.8.0
 
 dnl *** autotools stuff ****
 
@@ -277,31 +277,13 @@ AG_GST_CHECK_FEATURE(A52DEC, [a52dec], a52dec, [
 dnl *** amr-nb ***
 translit(dnm, m, l) AM_CONDITIONAL(USE_AMRNB, true)
 AG_GST_CHECK_FEATURE(AMRNB, [amrnb library], amrnb, [
-  PKG_CHECK_MODULES(AMRNB, opencore-amrnb, [
-    if $PKG_CONFIG --atleast-version=0.1.3 opencore-amrnb; then
-      AC_DEFINE(HAVE_OPENCORE_AMRNB_0_1_3_OR_LATER, 1, [Defined for newer opencore-amrnb])
-    fi
-    HAVE_AMRNB="yes"
-  ], [
-    HAVE_AMRNB="no"
-  ])
-  AC_SUBST(AMRNB_CFLAGS)
-  AC_SUBST(AMRNB_LIBS)
+  AG_GST_PKG_CHECK_MODULES(AMRNB, opencore-amrnb >= 0.1.3)
 ])
 
 dnl *** amr-wb dec ***
 translit(dnm, m, l) AM_CONDITIONAL(USE_AMRWB, true)
 AG_GST_CHECK_FEATURE(AMRWB, [amrwb library], amrwbdec, [
-  PKG_CHECK_MODULES(AMRWB, opencore-amrwb, [
-    if $PKG_CONFIG --atleast-version=0.1.3 opencore-amrwb; then
-      AC_DEFINE(HAVE_OPENCORE_AMRWB_0_1_3_OR_LATER, 1, [Defined for newer opencore-amrwb])
-    fi
-    HAVE_AMRWB="yes"
-  ], [
-    HAVE_AMRWB="no"
-  ])
-  AC_SUBST(AMRWB_CFLAGS)
-  AC_SUBST(AMRWB_LIBS)
+  AG_GST_PKG_CHECK_MODULES(AMRWB, opencore-amrwb >= 0.1.3)
 ])
 
 dnl *** cdio ***
@@ -360,6 +342,14 @@ AG_GST_CHECK_FEATURE(MPEG2DEC, [mpeg2dec], mpeg2dec, [
   AG_GST_PKG_CHECK_MODULES(MPEG2DEC, libmpeg2 >= 0.4.0)
 ])
 
+dnl *** mpg123 ***
+translit(dnm, m, l) AM_CONDITIONAL(USE_MPG123, true)
+AG_GST_CHECK_FEATURE(MPG123, [mpg123 audio decoder], mpg123, [
+  PKG_CHECK_MODULES(MPG123, libmpg123 >= 1.13, HAVE_MPG123="yes", HAVE_MPG123="no")
+  AC_SUBST(MPG123_CFLAGS)
+  AC_SUBST(MPG123_LIBS)
+])
+
 dnl *** sidplay : works with libsidplay 1.36.x (not 2.x.x) ***
 translit(dnm, m, l) AM_CONDITIONAL(USE_SIDPLAY, true)
 AG_GST_CHECK_FEATURE(SIDPLAY, [libsidplay], sid, [
@@ -396,6 +386,7 @@ AM_CONDITIONAL(USE_DVDREAD, false)
 AM_CONDITIONAL(USE_LAME, false)
 AM_CONDITIONAL(USE_MAD, false)
 AM_CONDITIONAL(USE_MPEG2DEC, false)
+AM_CONDITIONAL(USE_MPG123, false)
 AM_CONDITIONAL(USE_SIDPLAY, false)
 AM_CONDITIONAL(USE_TWOLAME, false)
 AM_CONDITIONAL(USE_X264, false)
@@ -480,6 +471,7 @@ ext/dvdread/Makefile
 ext/lame/Makefile
 ext/mad/Makefile
 ext/mpeg2dec/Makefile
+ext/mpg123/Makefile
 ext/sidplay/Makefile
 ext/twolame/Makefile
 ext/x264/Makefile
@@ -488,6 +480,7 @@ docs/plugins/Makefile
 docs/version.entities
 tests/Makefile
 tests/check/Makefile
+tests/files/Makefile
 m4/Makefile
 po/Makefile.in
 pkgconfig/Makefile

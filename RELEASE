@@ -1,18 +1,15 @@
 
-Release notes for GStreamer Ugly Plugins 1.7.1
+Release notes for GStreamer Ugly Plugins 1.8.0
+
+The GStreamer team is pleased to announce the first release of the new stable
+1.8 release series. The 1.8 release series is adding new features on top of
+the 1.0, 1.2, 1.4 and 1.6 series and is part of the API and ABI-stable 1.x
+release series of the GStreamer multimedia framework.
 
 
-The GStreamer team is pleased to announce the first release of the unstable
-1.7 release series. The 1.7 release series is adding new features on top of
-the 1.0, 1.2, 1.4 and 1.6 series and is part of the API and ABI-stable 1.x release
-series of the GStreamer multimedia framework. The unstable 1.7 release series
-will lead to the stable 1.8 release series in the next weeks. Any newly added
-API can still change until that point.
-
-
-Binaries for Android, iOS, Mac OS X and Windows will be provided separately
-during the unstable 1.7 release series.
-
+Binaries for Android, iOS, Mac OS X and Windows will be provided shortly after
+the source release by the GStreamer project during the stable 1.8 release
+series.
 
 
 "When you have to shoot, shoot.  Don't talk."
@@ -58,22 +55,17 @@ contains a set of codecs plugins based on libav (formerly gst-ffmpeg)
 
   
 
-Bugs fixed in this release
-     
-      * 753920 : dvdlpcmdec: factor out common code to set output format into new function
-      * 755469 : asfdemux: Non-flushing seeks don't work, broken segment seek handling and other seeking related issues
-
 ==== Download ====
 
 You can find source releases of gst-plugins-ugly in the download
-directory: http://gstreamer.freedesktop.org/src/gst-plugins-ugly/
+directory: https://gstreamer.freedesktop.org/src/gst-plugins-ugly/
 
 The git repository and details how to clone it can be found at
 http://cgit.freedesktop.org/gstreamer/gst-plugins-ugly/
 
 ==== Homepage ====
 
-The project's website is http://gstreamer.freedesktop.org/
+The project's website is https://gstreamer.freedesktop.org/
 
 ==== Support and Bugs ====
 
@@ -98,10 +90,6 @@ subscribe to the gstreamer-devel list.
         
 Contributors to this release
     
-      * Arjen Veenhuizen
-      * HoonHee Lee
-      * Nicolas Dufresne
-      * Reynaldo H. Verdejo Pinochet
+      * Edward Hervey
       * Sebastian Dröge
-      * Tim-Philipp Müller
  
