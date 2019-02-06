@@ -5,7 +5,8 @@ include /usr/share/cdbs/1/class/gnome.mk
 include /usr/share/cdbs/1/rules/utils.mk
 include /usr/share/cdbs/1/rules/autoreconf.mk
 
-DEB_DH_AUTORECONF_ARGS=--as-needed
+DEB_DH_AUTORECONF_ARGS = --as-needed
+DEB_DH_AUTORECONF_ARGS += ./autogen.sh
 
 CFLAGS += -Wno-error
 CXXFLAGS += -Wno-error
