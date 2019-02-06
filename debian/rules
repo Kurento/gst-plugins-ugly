@@ -146,9 +146,10 @@ DEB_CONFIGURE_EXTRA_FLAGS += \
 	--with-package-origin=$(GST_PACKAGE_ORIGIN)
 
 # only build the docs on arches which can
-ifeq (,$(findstring $(DEB_HOST_ARCH),m68k arm))
-DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc
-endif
+# Kurento: Disable building docs
+#ifeq (,$(findstring $(DEB_HOST_ARCH),m68k arm))
+#DEB_CONFIGURE_EXTRA_FLAGS += --enable-gtk-doc
+#endif
 
 
 clean::
